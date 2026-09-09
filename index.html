@@ -230,11 +230,27 @@
     display:flex; align-items:center; justify-content:space-between;
     padding:12px 14px; border-bottom:1px solid var(--linea);
     background:linear-gradient(180deg, var(--crema-2), transparent);
+    gap:10px;
   }
   .chat-head .titulo{
     font-family:'Fraunces', serif; font-weight:700; font-size:15px;
   }
   .chat-head .canal{font-size:12px; color:var(--texto-suave); font-weight:600;}
+  .chat-open{
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--azul); color:#fff;
+    padding:6px 12px; border-radius:999px;
+    font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    text-decoration:none; border:0;
+    transition:background .2s;
+  }
+  .chat-open:hover{background:var(--rojo)}
+  .chat-hint{
+    padding:8px 14px; font-size:12px; color:var(--texto-suave);
+    background:var(--crema-2); border-bottom:1px solid var(--linea);
+    line-height:1.4;
+  }
+  .chat-hint strong{color:var(--texto)}
   .chat-frame{flex:1; min-height:0}
   .chat-frame iframe{width:100%; height:100%; border:0; display:block; background:var(--superficie);}
 
@@ -479,8 +495,9 @@
   <aside class="chat-wrap" aria-label="Chat en vivo">
     <div class="chat-head">
       <span class="titulo">Chat en vivo</span>
-      <span class="canal">twitch.tv/historiasdepixel</span>
+      <a class="chat-open" id="chatPopout" href="https://www.twitch.tv/popout/historiasdepixel/chat" target="_blank" rel="noopener" title="Abrir el chat en una ventana aparte de Twitch — permite escribir con tu cuenta de Twitch">💬 Escribir</a>
     </div>
+    <div class="chat-hint">Para <strong>leer</strong> el chat solo mira acá. Para <strong>escribir</strong>, apreta <strong>💬 Escribir</strong> arriba: se abre el chat en Twitch (necesita cuenta de Twitch gratis).</div>
     <div class="chat-frame">
       <iframe
         id="twitchChat"
